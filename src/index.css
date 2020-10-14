@@ -1,9 +1,42 @@
-.logo{
-    padding-top: 0;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 0;
-    background-image: url('/img/noun_Charity_3028505.png');
-    background-position: left;
-    background-size: contain;
+#homepage {
+    background-image: url('https://i.ibb.co/wcYvD2C/kid-4305233-1920.jpg');
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#mission {
+    padding-bottom: 180px;
+}
+
+@media (min-width: 330px) and (max-width: 399.98px) {
+
+    #mission {
+        padding-bottom: 260px;
+    }
+
+    #title {
+        padding-top: 20px;
+    }
+
+}
+
+@media (min-width: 400px) and (max-width: 991.98px) {
+
+    #mission {
+        padding: 30px;
+        padding-bottom: 300px;
+    }
+
+    #title {
+        padding-top: 70px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+@media (min-width: 1200px) {
+
 }
