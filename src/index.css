@@ -1,27 +1,65 @@
-#homepage {
-    background-image: url('https://i.ibb.co/wcYvD2C/kid-4305233-1920.jpg');
-    text-align: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+@media only screen and (max-width: 600px) {
+    #homepage {
+        background-image: url('https://i.ibb.co/wcYvD2C/kid-4305233-1920.jpg');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+        min-height: 560px;
+        text-align: center;
 
-#mission {
-    padding-bottom: 180px;
-}
-
-@media (min-width: 330px) and (max-width: 399.98px) {
-
-    #mission {
-        padding-bottom: 260px;
     }
 
-    #title {
+    #mission {
+        padding-bottom: 180px;
+    }
+
+    .footer {
+        position: relative;
+        height: 100%;
+        padding-bottom: 25px;
+        background-color: #f5f5f5;
+        color: gainsboro;
+    }
+
+    .flex-item {
+        padding: 5px;
+    }
+
+    .flex-item > h2 {
+        padding-top: 10px;
+    }
+
+    .non-profit {
         padding-top: 20px;
     }
 
+    .oval {
+        padding-top: 10px;
+        margin: auto;
+        width: 30px;
+        height: 10px;
+        background: gainsboro;
+        border-radius: 40px;
+    }
 }
 
-@media (min-width: 400px) and (max-width: 991.98px) {
+
+@media only screen and (min-width: 600px) {
+
+    #mission {
+        padding: 30px;
+        padding-bottom: 300px;
+    }
+
+    #title {
+        padding-top: 70px;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) {
 
     #mission {
         padding: 30px;
@@ -33,10 +71,55 @@
     }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {
+
+@media only screen and (min-width: 992px) {
+
+    #homepage {
+        background-image: url('https://i.ibb.co/pWFF84F/walking-1081723-1920.jpg');
+        text-align: center;
+        background-size: cover;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+
+    #mission {
+        padding: 50px;
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-bottom: 350px;
+        font-size: 30px;
+
+    ;
+    }
+
+    #title {
+        padding-top: 100px;
+        font-size: 60px;
+    }
 
 }
 
-@media (min-width: 1200px) {
 
+@media only screen and (min-width: 1200px) {
+
+    #homepage {
+        background-image: url('https://i.ibb.co/pWFF84F/walking-1081723-1920.jpg');
+        text-align: center;
+        background-size: cover;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+
+    #mission {
+        padding: 50px;
+        padding-left: 400px;
+        padding-right: 400px;
+        padding-bottom: 550px;
+        font-size: 30px;
+    }
+
+    #title {
+        padding-top: 100px;
+        font-size: 70px;
+    }
 }
