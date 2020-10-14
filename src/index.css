@@ -1,74 +1,62 @@
+#homepage {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    min-height: 560px;
+    text-align: center;
+
+}
+
+#mission {
+    padding-bottom: 180px;
+}
+
+.footer {
+    position: relative;
+    height: 100%;
+    padding-bottom: 25px;
+    background-color: #f5f5f5;
+    color: gainsboro;
+}
+
+.flex-item {
+    padding: 5px;
+}
+
+.flex-item > h2 {
+    padding-top: 10px;
+}
+
+.non-profit {
+    padding-top: 20px;
+}
+
+.oval {
+    padding-top: 10px;
+    margin: auto;
+    width: 30px;
+    height: 10px;
+    background: gainsboro;
+    border-radius: 40px;
+}
+
 @media only screen and (max-width: 600px) {
+
     #homepage {
         background-image: url('https://i.ibb.co/wcYvD2C/kid-4305233-1920.jpg');
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center;
-        background-size: cover;
-        min-height: 560px;
-        text-align: center;
-
     }
 
-    #mission {
-        padding-bottom: 180px;
-    }
-
-    .footer {
-        position: relative;
-        height: 100%;
-        padding-bottom: 25px;
-        background-color: #f5f5f5;
-        color: gainsboro;
-    }
-
-    .flex-item {
-        padding: 5px;
-    }
-
-    .flex-item > h2 {
-        padding-top: 10px;
-    }
-
-    .non-profit {
-        padding-top: 20px;
-    }
-
-    .oval {
-        padding-top: 10px;
-        margin: auto;
-        width: 30px;
-        height: 10px;
-        background: gainsboro;
-        border-radius: 40px;
-    }
 }
 
 
 @media only screen and (min-width: 600px) {
-
-    #mission {
-        padding: 30px;
-        padding-bottom: 300px;
-    }
-
-    #title {
-        padding-top: 70px;
-    }
 
 }
 
 
 @media only screen and (min-width: 768px) {
 
-    #mission {
-        padding: 30px;
-        padding-bottom: 300px;
-    }
-
-    #title {
-        padding-top: 70px;
-    }
 }
 
 
@@ -88,15 +76,12 @@
         padding-right: 150px;
         padding-bottom: 350px;
         font-size: 30px;
-
-    ;
     }
 
     #title {
         padding-top: 100px;
         font-size: 60px;
     }
-
 }
 
 
