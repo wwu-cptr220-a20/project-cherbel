@@ -52,10 +52,26 @@
 
 @media only screen and (min-width: 600px) {
 
+    #homepage {
+        background-image: url('https://i.ibb.co/pWFF84F/walking-1081723-1920.jpg');
+        text-align: center;
+        background-size: cover;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
+
 }
 
 
 @media only screen and (min-width: 768px) {
+
+    #homepage {
+        background-image: url('https://i.ibb.co/pWFF84F/walking-1081723-1920.jpg');
+        text-align: center;
+        background-size: cover;
+        height: 100%;
+        background-repeat: no-repeat;
+    }
 
 }
 

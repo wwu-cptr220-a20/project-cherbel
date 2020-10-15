@@ -27,6 +27,63 @@
     border-radius: 40px;
 }
 
+.donate-btn {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+}
+
+.donate-btn:before {
+    content: 'Hello';
+    background: linear-gradient(45deg, blue, lightcoral, blue, lightgray, blue, grey, blue, lightpink, lightcoral);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(7px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.donate-btn:active {
+    color: lightslategray;
+    background-color: #2c292f;
+}
+
+.donate-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
 @media only screen and (max-width: 600px) {
 
 }
