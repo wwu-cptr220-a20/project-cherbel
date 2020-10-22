@@ -17,9 +17,9 @@ h3 {
 
 #social img {
     display: block;
-    width: 100%;
+    width: 50%;
     height: auto;
-    padding: 20px;
+    width: 100px;
 }
 
 .footer {
@@ -51,6 +51,20 @@ h3 {
     padding-top: 20px;
 }
 
+.kids-p {
+    height: 75px;
+}
+
+#kids-stories {
+    height: 500px;
+    width: 300px;
+    margin: auto;
+}
+
+.kids-img {
+    height: 300px;
+}
+
 @media only screen and (max-width: 600px) {
 
 }
@@ -60,29 +74,32 @@ h3 {
     h1 {
         font-size: 80px;
     }
-
     h2 {
         font-size: 50px;
     }
-
     h3 {
         font-size: 25px;
     }
-
     #social img {
         display: block;
         width: 50%;
         height: auto;
         width: 100px;
     }
-
     img {
         height: 600px;
     }
-
     .portal {
         padding-left: 20px;
         padding-right: 20px;
+    }
+    #kids-stories {
+        height: 550px;
+        width: 400px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 350px;
     }
 }
 
@@ -91,24 +108,32 @@ h3 {
     h1 {
         font-size: 80px;
     }
-
     h2 {
         font-size: 50px;
     }
-
     h3 {
         font-size: 25px;
     }
-
     #social img {
         display: block;
         width: 50%;
         height: auto;
         width: 100px;
     }
-
-    img {
+    #kids-stories {
+        width: 500px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 700px;
+    }
+    #kids-stories {
         height: 600px;
+        width: 400px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 400px;
     }
 }
 
@@ -117,24 +142,32 @@ h3 {
     h1 {
         font-size: 100px;
     }
-
     h2 {
         font-size: 60px;
     }
-
     h3 {
         font-size: 30px;
     }
-
     #social img {
         display: block;
         width: 50%;
         height: auto;
         width: 120px;
     }
-
-    img {
-        height: 600px;
+    #kids-stories {
+        width: 500px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 700px;
+    }
+    #kids-stories {
+        height: 720px;
+        width: 500px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 500px;
     }
 }
 
@@ -143,24 +176,34 @@ h3 {
     h1 {
         font-size: 100px;
     }
-
     h2 {
         font-size: 60px;
     }
-
     h3 {
         font-size: 30px;
     }
-
     #social img {
         display: block;
         width: 50%;
         height: auto;
         width: 120px;
     }
-
     img {
         height: 600px;
     }
-
+    #kids-stories {
+        width: 500px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 700px;
+    }
+    #kids-stories {
+        height: 820px;
+        width: 500px;
+        margin: auto;
+    }
+    .kids-img {
+        height: 600px;
+    }
 }
