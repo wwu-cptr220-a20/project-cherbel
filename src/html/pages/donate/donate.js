@@ -25,26 +25,28 @@ let PAGECONTENTS = [
     }
 ]
 
-let currentPageContent = { }
+let currentPageContent = { 
+    popup: document.querySelector("#story1")
+}
 
 let storyDiv = document.getElementById("kids-stories");
-storyDiv.appendChild(createButtonDiv());
+// storyDiv.appendChild(createButtonDiv());
 storyDiv.classList.add("border");
 updateInformation();
 renderPage();
 
-function createButtonDiv() {
-    let div = document.createElement("div");
-    let backButton = document.createElement("button");
-    let nextButton = document.createElement("button");
-    backButton.innerText = "Back";
-    nextButton.innerText = "Next";
-    backButton.classList.add("back");
-    nextButton.classList.add("next");
-    div.appendChild(backButton);
-    div.appendChild(nextButton);
-    return div;
-}
+// function createButtonDiv() {
+//     let div = document.createElement("div");
+//     let backButton = document.createElement("button");
+//     let nextButton = document.createElement("button");
+//     backButton.innerText = "Back";
+//     nextButton.innerText = "Next";
+//     backButton.classList.add("back");
+//     nextButton.classList.add("next");
+//     div.appendChild(backButton);
+//     div.appendChild(nextButton);
+//     return div;
+// }
 
 function updateInformation(){
     currentPageContent.imageUrl = PAGECONTENTS[arrayPosition].imageUrl;
@@ -78,3 +80,31 @@ backButtons.addEventListener("click", function (){
     updateInformation();
     renderPage();
 });
+
+let moreButtons = document.querySelector("#more");
+moreButtons.addEventListener("click", function() {
+    
+    document.querySelector("#kids-stories").style.display = 'none';
+    switch (arrayPosition) {
+        case 0:
+            currentPageContent.popup = document.querySelector("#story1");
+            currentPageContent.popup.style.display = 'flex';
+            break;
+        case 1:
+            currentPageContent.popup = document.querySelector("#story2");
+            currentPageContent.popup.style.display = 'flex';
+            break;
+        case 2:
+            currentPageContent.popup = document.querySelector("#story3");
+            currentPageContent.popup.style.display = 'flex';
+            break;
+    }
+})
+
+let closeButtons = document.querySelectorAll(".closeButton");
+closeButtons.forEach(function(item) {
+    item.addEventListener("click", function() {
+        currentPageContent.popup.style.display = 'none';
+        document.querySelector("#kids-stories").style.display = 'block';
+    })
+})
