@@ -41,7 +41,7 @@ function renderPage(){
 let nextButtons = document.querySelector(".next");
 nextButtons.addEventListener("click", function (){
     arrayPosition++;
-    if(arrayPosition >= pageContent.length){
+    if(arrayPosition >= Object.keys(pageContent).length){
         arrayPosition = 0
     }
     updateInformation();
@@ -52,7 +52,7 @@ let backButtons = document.querySelector(".back");
 backButtons.addEventListener("click", function (){
     arrayPosition--;
     if(arrayPosition < 0){
-        arrayPosition = (pageContent.length - 1);
+        arrayPosition = (Object.keys(pageContent).length - 1);
     }
     updateInformation();
     renderPage();
