@@ -1,46 +1,33 @@
 'use strict';
 
 let arrayPosition = 0
-let PAGECONTENTS = [
-    //Page 1
-    {
-        imageUrl: "https://i.ibb.co/1dkTL91/kid-2696865-1920.jpg",
-        numberOfLikes: 0,
-        headingText: "This is ____",
-        paragraph: "___ is one of the kids on our organization benefiting from your donations.",
-        alt: "A photo of a smiling girl."
-    },
-    //Page 2
-    {
-        imageUrl: "https://i.ibb.co/5k1v1gP/kid-2679111-1920.jpg",
-        numberOfLikes: 0,
-        headingText: "Meet ____",
-        paragraph: "____ is learning how to type on a computer at our school in ___.",
-        alt: "A photo of a smiling girl."
-    },
-    //Page 3
-    {
-        imageUrl: "https://i.ibb.co/80PG5sT/child-5213589-1920.jpg",
-        numberOfLikes: 0,
-        headingText: "Say hi to ____",
-        paragraph: "____'s birthday is today!",
-        alt: "A photo of a smiling girl playing with water."
-    }
-]
-
-let currentPageContent = { 
+let pageContent;
+let currentPageContent = {
     popup: document.querySelector("#story1")
 }
-
 let storyDiv = document.getElementById("kids-stories");
+
 storyDiv.classList.add("border");
-updateInformation();
-renderPage();
+getPageContents().catch(function () {
+    new Error("Content Cannot Be loaded at this time.");
+});
+
+function getPageContents() {
+    return fetch('kids-stories-content.json')
+        .then(function (response) {
+            return response.json();
+        }).then(function (json){
+            pageContent = json;
+            console.log(pageContent);
+            updateInformation()
+            renderPage();
+        });
+}
 
 function updateInformation(){
-    currentPageContent.imageUrl = PAGECONTENTS[arrayPosition].imageUrl;
-    currentPageContent.headingText = PAGECONTENTS[arrayPosition].headingText;
-    currentPageContent.paragraph = PAGECONTENTS[arrayPosition].paragraph;
+    currentPageContent.imageUrl = pageContent[arrayPosition].imageUrl;
+    currentPageContent.headingText = pageContent[arrayPosition].headingText;
+    currentPageContent.paragraph = pageContent[arrayPosition].paragraph;
     renderPage();
 }
 
@@ -54,7 +41,7 @@ function renderPage(){
 let nextButtons = document.querySelector(".next");
 nextButtons.addEventListener("click", function (){
     arrayPosition++;
-    if(arrayPosition >= PAGECONTENTS.length){
+    if(arrayPosition >= pageContent.length){
         arrayPosition = 0
     }
     updateInformation();
@@ -65,7 +52,7 @@ let backButtons = document.querySelector(".back");
 backButtons.addEventListener("click", function (){
     arrayPosition--;
     if(arrayPosition < 0){
-        arrayPosition = (PAGECONTENTS.length - 1);
+        arrayPosition = (pageContent.length - 1);
     }
     updateInformation();
     renderPage();
