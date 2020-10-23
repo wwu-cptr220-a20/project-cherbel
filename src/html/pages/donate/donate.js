@@ -30,23 +30,9 @@ let currentPageContent = {
 }
 
 let storyDiv = document.getElementById("kids-stories");
-// storyDiv.appendChild(createButtonDiv());
 storyDiv.classList.add("border");
 updateInformation();
 renderPage();
-
-// function createButtonDiv() {
-//     let div = document.createElement("div");
-//     let backButton = document.createElement("button");
-//     let nextButton = document.createElement("button");
-//     backButton.innerText = "Back";
-//     nextButton.innerText = "Next";
-//     backButton.classList.add("back");
-//     nextButton.classList.add("next");
-//     div.appendChild(backButton);
-//     div.appendChild(nextButton);
-//     return div;
-// }
 
 function updateInformation(){
     currentPageContent.imageUrl = PAGECONTENTS[arrayPosition].imageUrl;
