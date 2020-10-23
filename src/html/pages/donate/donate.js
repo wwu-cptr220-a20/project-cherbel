@@ -12,6 +12,7 @@ getPageContents().catch(function () {
     new Error("Content Cannot Be loaded at this time.");
 });
 
+//Fetches page contents for kids section
 function getPageContents() {
     return fetch('kids-stories-content.json')
         .then(function (response) {
@@ -24,6 +25,7 @@ function getPageContents() {
         });
 }
 
+//Call Before renderPage.  Updates Current Information
 function updateInformation(){
     currentPageContent.imageUrl = pageContent[arrayPosition].imageUrl;
     currentPageContent.headingText = pageContent[arrayPosition].headingText;
@@ -31,6 +33,7 @@ function updateInformation(){
     renderPage();
 }
 
+//Renders page to current information
 function renderPage(){
     document.querySelector(".kids-img").src = currentPageContent.imageUrl;
     document.querySelector(".kids-img").alt = currentPageContent.alt;
@@ -38,6 +41,7 @@ function renderPage(){
     document.querySelector(".kids-p").textContent = currentPageContent.paragraph;
 }
 
+//Both buttons below react to input and change page accordingly
 let nextButtons = document.querySelector(".next");
 nextButtons.addEventListener("click", function (){
     arrayPosition++;
@@ -58,6 +62,7 @@ backButtons.addEventListener("click", function (){
     renderPage();
 });
 
+//Functions for learn more popup window
 let moreButtons = document.querySelector("#more");
 moreButtons.addEventListener("click", function() {
     
@@ -77,6 +82,7 @@ moreButtons.addEventListener("click", function() {
             break;
     }
 })
+
 
 let closeButtons = document.querySelectorAll(".closeButton");
 closeButtons.forEach(function(item) {
