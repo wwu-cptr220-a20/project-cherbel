@@ -42,7 +42,7 @@ let nextButtons = document.querySelector(".next");
 nextButtons.addEventListener("click", function (){
     arrayPosition++;
     if(arrayPosition >= Object.keys(pageContent).length){
-        arrayPosition = 0
+        arrayPosition = 0;
     }
     updateInformation();
     renderPage();
