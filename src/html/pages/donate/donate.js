@@ -8,9 +8,12 @@ let currentPageContent = {
 let storyDiv = document.getElementById("kids-stories");
 
 storyDiv.classList.add("border");
+//Load Page Contents
 getPageContents().catch(function () {
     new Error("Content Cannot Be loaded at this time.");
 });
+//Load Random Advice from Advice Slip.com
+getNewAdvice();
 
 //Fetches page contents for kids section
 function getPageContents() {
@@ -19,7 +22,6 @@ function getPageContents() {
             return response.json();
         }).then(function (json){
             pageContent = json;
-            console.log(pageContent);
             updateInformation()
             renderPage();
         });
@@ -39,6 +41,7 @@ function renderPage(){
     document.querySelector("#kids-img").alt = currentPageContent.alt;
     document.querySelector(".kids-head").textContent = currentPageContent.headingText;
     document.querySelector(".kids-p").textContent = currentPageContent.paragraph;
+    document.querySelector("#random-advice").textContent = currentPageContent.advice;
 }
 
 //Both buttons below react to input and change page accordingly
@@ -92,19 +95,19 @@ closeButtons.forEach(function(item) {
     })
 })
 
-// function loadImage(url) {
-//     return new Promise((resolve, reject) => {
-//         let img = new Image();
-//         img.addEventListener('load', e => resolve(img));
-//         img.addEventListener('error', () => {
-//             reject(new Error(`Failed to load image's URL: ${url}`));
-//         });
-//         img.src = url;
-//     });
-// }
-//
-// // load the image, and append it to the element id="image-holder"
-// loadImage('http://thecatapi.com/api/images/get?format=src&type=jpg&size=small')
-//     .then(img => document.getElementById('image-holder').appendChild(img))
-//     .catch(error => console.error(error));
+//Fetches advice from adviceslip.com api
+function getNewAdvice() {
+    fetch('https://api.adviceslip.com/advice')
+        .then(function (response) {
+            return response.json();
+        }).then((json) => {
+            currentPageContent.advice = json.slip.advice;
+            updateInformation()
+            renderPage();
+        }).catch(() => {
+            currentPageContent.advice = "We're Sorry, we were unable to load advice at this time.";
+            updateInformation();
+            renderPage();
+        });
+}
 

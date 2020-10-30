@@ -86,14 +86,6 @@
     padding-right: 10px;
 }
 
-.loading {
-    background-image: url(loading.gif);
-}
-
-/*.loadError {*/
-/*    background-image: url(loading.gif);*/
-/*}*/
-
 /*Social Media*/
 #social {
     margin-left: auto;
@@ -103,6 +95,22 @@
     display: block;
     height: auto;
     width: 100px;
+}
+
+/*Advice Card*/
+#adviceSection {
+    padding-top: 200px;
+}
+
+.advice-card {
+    border: solid cornflowerblue;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+#need-Advice {
+    font-size: 30px;
 }
 
 @media only screen and (max-width: 600px) {
