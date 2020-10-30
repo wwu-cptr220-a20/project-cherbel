@@ -35,8 +35,8 @@ function updateInformation(){
 
 //Renders page to current information
 function renderPage(){
-    document.querySelector(".kids-img").src = currentPageContent.imageUrl;
-    document.querySelector(".kids-img").alt = currentPageContent.alt;
+    document.querySelector("#kids-img").src = currentPageContent.imageUrl;
+    document.querySelector("#kids-img").alt = currentPageContent.alt;
     document.querySelector(".kids-head").textContent = currentPageContent.headingText;
     document.querySelector(".kids-p").textContent = currentPageContent.paragraph;
 }
@@ -91,3 +91,20 @@ closeButtons.forEach(function(item) {
         document.querySelector("#kids-stories").style.display = 'block';
     })
 })
+
+// function loadImage(url) {
+//     return new Promise((resolve, reject) => {
+//         let img = new Image();
+//         img.addEventListener('load', e => resolve(img));
+//         img.addEventListener('error', () => {
+//             reject(new Error(`Failed to load image's URL: ${url}`));
+//         });
+//         img.src = url;
+//     });
+// }
+//
+// // load the image, and append it to the element id="image-holder"
+// loadImage('http://thecatapi.com/api/images/get?format=src&type=jpg&size=small')
+//     .then(img => document.getElementById('image-holder').appendChild(img))
+//     .catch(error => console.error(error));
+

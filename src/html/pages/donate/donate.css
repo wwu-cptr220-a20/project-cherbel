@@ -86,6 +86,14 @@
     padding-right: 10px;
 }
 
+.loading {
+    background-image: url(loading.gif);
+}
+
+/*.loadError {*/
+/*    background-image: url(loading.gif);*/
+/*}*/
+
 /*Social Media*/
 #social {
     margin-left: auto;
