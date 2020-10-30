@@ -16,11 +16,76 @@ p {
     padding: 40px;
 }
 
-/*.flex-box{*/
-/*    display: inline;*/
-/*}*/
+/*Advice Card*/
+#content-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.flex-item {
+    margin: 20px;
+}
+
+/*Advice*/
+.advice-card {
+    border: solid cornflowerblue;
+    width: 400px;
+    height: 200px;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px, rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#need-Advice {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#random-advice {
+
+    padding-top: 10px;
+}
+
+#advice-source {
+    font-size: 10px;
+    padding-top: 20px;
+}
+
+/*Photo Card*/
+.photo-card {
+    padding-left: 100px;
+    padding-right: 100px;
+    border: solid darkblue;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    box-shadow: darkolivegreen 0px 0px 0px 3px, darkslategray 0px 0px 0px 6px, rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px, rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+/*Social Media*/
+#social {
+    margin-left: auto;
+    margin-right: auto;
+}
+#social img {
+    display: block;
+    height: auto;
+    width: 100px;
+}
 
 @media only screen and (max-width: 600px) {
+    /*Advice Card*/
+    #content-section {
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
 
 }
 
@@ -34,6 +99,11 @@ p {
     .donate-div {
         padding: 40px;
     }
+
+    #content-section {
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
 }
 
 
@@ -44,6 +114,11 @@ p {
     }
     .donate-div {
         padding: 40px;
+    }
+
+    #content-section {
+        padding-top: 0px;
+        padding-bottom: 50px;
     }
 }
 
@@ -69,5 +144,9 @@ p {
     }
     .donate-div {
         padding: 40px;
+    }
+
+    .flex-item {
+        margin: 40px;
     }
 }

@@ -12,8 +12,6 @@ storyDiv.classList.add("border");
 getPageContents().catch(function () {
     new Error("Content Cannot Be loaded at this time.");
 });
-//Load Random Advice from Advice Slip.com
-getNewAdvice();
 
 //Fetches page contents for kids section
 function getPageContents() {
@@ -23,7 +21,6 @@ function getPageContents() {
         }).then(function (json){
             pageContent = json;
             updateInformation()
-            renderPage();
         });
 }
 
@@ -41,7 +38,6 @@ function renderPage(){
     document.querySelector("#kids-img").alt = currentPageContent.alt;
     document.querySelector(".kids-head").textContent = currentPageContent.headingText;
     document.querySelector(".kids-p").textContent = currentPageContent.paragraph;
-    document.querySelector("#random-advice").textContent = currentPageContent.advice;
 }
 
 //Both buttons below react to input and change page accordingly
@@ -52,7 +48,6 @@ nextButtons.addEventListener("click", function (){
         arrayPosition = 0;
     }
     updateInformation();
-    renderPage();
 });
 
 let backButtons = document.querySelector(".back");
@@ -62,7 +57,6 @@ backButtons.addEventListener("click", function (){
         arrayPosition = (Object.keys(pageContent).length - 1);
     }
     updateInformation();
-    renderPage();
 });
 
 //Functions for learn more popup window
@@ -94,20 +88,4 @@ closeButtons.forEach(function(item) {
         document.querySelector("#kids-stories").style.display = 'block';
     })
 })
-
-//Fetches advice from adviceslip.com api
-function getNewAdvice() {
-    fetch('https://api.adviceslip.com/advice')
-        .then(function (response) {
-            return response.json();
-        }).then((json) => {
-            currentPageContent.advice = json.slip.advice;
-            updateInformation()
-            renderPage();
-        }).catch(() => {
-            currentPageContent.advice = "We're Sorry, we were unable to load advice at this time.";
-            updateInformation();
-            renderPage();
-        });
-}
 
