@@ -7,29 +7,18 @@
     padding-right: 10px;
 }
 
-/*Kids Stories Section*/
-#image-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*Social Media*/
+#social {
+    margin-left: auto;
+    margin-right: auto;
 }
-#kids-stories {
-    height: 485px;
-    width: 300px;
-    margin: auto;
-    background-color: lightgrey;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#social img {
+    display: block;
+    height: auto;
+    width: 100px;
 }
 
-#kids-stories > div > img {
-    width: auto;
-    height: 250px;
-}
-.kids-p {
-    padding-right: 5px;
-    padding-left: 5px;
-    height: 75px;
-}
+/*Kids Stories Section*/
 /* code inspired from https://codepen.io/gin85cc/pen/jrOgRq */
 .back, .next {
     display: inline-block;
@@ -85,42 +74,39 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-
-/*Social Media*/
-#social {
-    margin-left: auto;
-    margin-right: auto;
+#image-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#social img {
-    display: block;
-    height: auto;
-    width: 100px;
+#kids-stories {
+    height: 485px;
+    width: 300px;
+    margin: auto;
+    background-color: lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#kids-stories > div > img {
+    width: auto;
+    height: 250px;
+}
+.kids-p {
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 75px;
 }
 
 @media only screen and (max-width: 600px) {
-
+    h1 {
+        font-size: 60px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
     .portal {
         padding-left: 20px;
         padding-right: 20px;
-    }
-    #kids-stories {
-        height: 647px;
-        width: 400px;
-    }
-    #kids-stories > div > img {
-        width: auto;
-        height: 380px;
-    }
-    #kids-stories > div > img {
-        width: auto;
-        height: 350px;
-    }
-    #kids-stories > p {
-        padding-left: 40px;
-        padding-right: 40px;
     }
     .story {
         width: 647px;
@@ -133,10 +119,33 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    #kids-stories {
+        height: 647px;
+        width: 400px;
+    }
+    #kids-stories > div > img {
+        width: auto;
+        height: 350px;
+    }
+    #kids-stories > p {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
 
 
 @media only screen and (min-width: 768px) {
+    .story {
+        height: 647px;
+        width: 400px;
+    }
+    .story button {
+        width: 30%;
+    }
+    .story > p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     #kids-stories {
         height: 647px;
         width: 400px;
@@ -152,17 +161,6 @@
         padding-right: 45px;
         padding-left: 45px;
     }
-    .story {
-        height: 647px;
-        width: 400px;
-    }
-    .story button {
-        width: 30%;
-    }
-    .story > p {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
 }
 
 
@@ -170,6 +168,14 @@
     #see-impact {
         padding-top: 40px;
         padding-bottom: 10px;
+    }
+    .story {
+        height: 809px;
+        width: 500px;
+    }
+    .story > p {
+        padding-left: 10px;
+        padding-right: 10px;
     }
     #kids-stories {
         height: 809px;
@@ -186,7 +192,11 @@
         padding-right: 75px;
         padding-left: 75px;
     }
-    .story {
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .story  {
         height: 809px;
         width: 500px;
     }
@@ -194,10 +204,6 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-}
-
-
-@media only screen and (min-width: 1200px) {
     #kids-stories {
         height: 809px;
         width: 500px;
@@ -212,13 +218,5 @@
     #kids-stories > p {
         padding-right: 60px;
         padding-left: 60px;
-    }
-    .story  {
-        height: 809px;
-        width: 500px;
-    }
-    .story > p {
-        padding-left: 10px;
-        padding-right: 10px;
     }
 }

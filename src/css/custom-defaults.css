@@ -6,7 +6,6 @@ h2 {
     padding-top: 10px;
     font-size: 35px;
 }
-
 h3 {
     padding-top: 20px;
     padding-bottom: 3px;
@@ -17,10 +16,6 @@ h4{
     padding-bottom: 0;
     font-size: 18px;
 }
-img {
-    width: 300px;
-    height: auto;
-}
 p{
     font-size: 15px;
     padding-left: 10px;
@@ -28,7 +23,10 @@ p{
 }
 
 @media only screen and (max-width: 600px) {
-
+    img {
+        width: 300px;
+        height: auto;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -55,12 +53,9 @@ p{
         height: auto;
     }
     p {
-        padding: 10px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding: 10px 50px;
     }
 }
-
 
 @media only screen and (min-width: 768px) {
     h1 {
@@ -82,12 +77,9 @@ p{
         width: 400px;
     }
     p {
-        padding: 10px;
-        padding-left: 200px;
-        padding-right: 200px;
+        padding: 10px 200px;
     }
 }
-
 
 @media only screen and (min-width: 992px) {
     h1 {
@@ -114,7 +106,6 @@ p{
     }
 }
 
-
 @media only screen and (min-width: 1200px) {
     h1 {
         font-size: 100px;
@@ -135,8 +126,6 @@ p{
         width: 500px;
     }
     p {
-        padding: 10px;
-        padding-left: 400px;
-        padding-right: 400px;
+        padding: 10px 400px;
     }
 }
