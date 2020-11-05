@@ -37,6 +37,7 @@
     }
   },
   "dependencies": {
+    "chart.js": "^2.9.4",
     "normalize.css": "^8.0.1"
   }
 }
