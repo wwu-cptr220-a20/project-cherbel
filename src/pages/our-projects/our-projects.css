@@ -12,6 +12,10 @@ img {
 .donate-div {
     padding-bottom: 40px;
 }
+#graph-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 @media only screen and (max-width: 600px) {
     h1 {
@@ -29,16 +33,28 @@ img {
     h1 {
         font-size: 80px;
     }
+    #graph-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
     h1 {
         font-size: 100px;
     }
+    #graph-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     h1 {
         font-size: 100px;
+    }
+    #graph-container {
+        padding-left: 200px;
+        padding-right: 200px;
     }
 }
