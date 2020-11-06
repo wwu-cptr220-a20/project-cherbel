@@ -27,66 +27,29 @@ describe('Source code is valid', () => {
   })  
 
   //CSS validation
-  test('Folder CSS validates without errors', async () => {
+  test('CSS in CSS Folder validates without errors', async () => {
     await expect('css/*.css').toHaveNoCssLintErrorsAsync(); //test all files in css folder
   })
-  test('About Us CSS validates without errors', async () => {
-    await expect('pages/about-us/*.css').toHaveNoCssLintErrorsAsync(); //test all css files in about us folder
+  test('CSS in About Us folder validates without errors', async () => {
+    await expect('src/pages/about-us/*.css').toHaveNoCssLintErrorsAsync(); //test all files in css folder
   })
-  test('Contact Us CSS validates without errors', async () => {
-    await expect('pages/contact-us/*.css').toHaveNoCssLintErrorsAsync(); //test all files in Contact Us folder
+  test('CSS in Contact Us folder validates without errors', async () => {
+    await expect('src/pages/contact-us/*.css').toHaveNoCssLintErrorsAsync(); //test all files in css folder
   })
-  test('Dontate CSS validates without errors', async () => {
-    await expect('pages/donate/*.css').toHaveNoCssLintErrorsAsync(); //test all files in donate folder
+  test('CSS in Donate folder validates without errors', async () => {
+    await expect('src/pages/donate/*.css').toHaveNoCssLintErrorsAsync(); //test all files in css folder
   })
-  test('Our Projects CSS validates without errors', async () => {
-    await expect('pages/our-projects/*.css').toHaveNoCssLintErrorsAsync(); //test all files in donate folder
+  test('CSS in Our Projects Folder validates without errors', async () => {
+    await expect('src/pages/our-projects/*.css').toHaveNoCssLintErrorsAsync(); //test all files in css folder
   })
 
   //Javascript Validation
-  test('JavaScript folder lints without errors', () => {
-    if(fs.existsSync(__dirname+'/js')) {
-      const jsfiles = fs.readdirSync(__dirname+'/js').filter((f) => f.endsWith('.js'));
+  test('JS folder lints without errors', () => {
+    if(fs.existsSync(__dirname+'/src/js')) {
+      const jsfiles = fs.readdirSync(__dirname+'/src/js').filter((f) => f.endsWith('.js'));
 
       for(let f of jsfiles) {
-        console.log(f);
-        expect([__dirname +'/js'+f]).toHaveNoEsLintErrors();
-      }
-    }
-  })
-  test('About Us JavaScript lints without errors', () => {
-    if(fs.existsSync(__dirname+'/pages/about-us')) {
-      const jsfiles = fs.readdirSync(__dirname+'/pages/about-us').filter((f) => f.endsWith('.js'));
-
-      for(let f of jsfiles) {
-        expect(['pages/about-us/'+f]).toHaveNoEsLintErrors();
-      }
-    }
-  })
-  test('Contact Us JavaScript lints without errors', () => {
-    if(fs.existsSync(__dirname+'/pages/contact-us')) {
-      const jsfiles = fs.readdirSync(__dirname+'/pages/contact-us').filter((f) => f.endsWith('.js'));
-
-      for(let f of jsfiles) {
-        expect(['pages/contact-us/'+f]).toHaveNoEsLintErrors();
-      }
-    }
-  })
-  test('Donate JavaScript lints without errors', () => {
-    if(fs.existsSync(__dirname+'/pages/donate')) {
-      const jsfiles = fs.readdirSync(__dirname+'/pages/donate').filter((f) => f.endsWith('.js'));
-
-      for(let f of jsfiles) {
-        expect(['pages/donate/'+f]).toHaveNoEsLintErrors();
-      }
-    }
-  })
-  test('Our Projects JavaScript lints without errors', () => {
-    if(fs.existsSync(__dirname+'/pages/our-projects')) {
-      const jsfiles = fs.readdirSync(__dirname+'/pages/our-projects').filter((f) => f.endsWith('.js'));
-
-      for(let f of jsfiles) {
-        expect(['pages/our-projects/'+f]).toHaveNoEsLintErrors();
+        expect([__dirname +'/src/js/'+f]).toHaveNoEsLintErrors();
       }
     }
   })
