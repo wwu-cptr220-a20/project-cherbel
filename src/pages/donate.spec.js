@@ -1,10 +1,10 @@
 const fs = require('fs');
 const cheerio = require('cheerio') //for html testing
+const fetchMock = require('fetch-mock');
 
 //include custom matchers
 const styleMatchers = require('jest-style-matchers');
 expect.extend(styleMatchers);
-
 
 const htmlPath = __dirname + '/donate/donate.html';
 const html = fs.readFileSync(htmlPath, 'utf-8'); //load the HTML file once
@@ -64,21 +64,38 @@ describe('Includes Required HTML Elements', () => {
     })
 })
 
-// describe('Javascript Functions Properly', () => {
-//
-//     beforeAll(() => {
-//         fetchMock.get('*', []);
-//         page = require(jsPath);
-//     })
-//
-//     test('Renders individual tracks', () => {
-//         page.renderTrack(page.EXAMPLE_SEARCH_RESULTS.results[1]); //render Bowie
-//
-//         let img = $('#records img');
-//         expect(img.length).toBe(1); //show single img
-//         expect(img.attr('src')).toEqual(page.EXAMPLE_SEARCH_RESULTS.results[1].artworkUrl100); //has correct artwork
-//         let trackRegex = new RegExp(page.EXAMPLE_SEARCH_RESULTS.results[1].trackName.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")); //get name, escape as regex
-//         expect(img.attr('alt')).toMatch(trackRegex); //(mostly) matches
-//         expect(img.attr('title')).toMatch(trackRegex); //(mostly) matches
-//     })
-// })
+//load JavaScript libraries separately
+window.jQuery = window.$ = $; //make available to solution
+let page;/// = require(jsPath); //load the solution
+
+describe('Javascript Functions Properly', () => {
+
+    beforeAll(() => {
+        fetchMock.get('*', []);
+        page = require(jsPath);
+        page.pageContent = [
+            {
+                "imageUrl": "https://i.ibb.co/1dkTL91/kid-2696865-1920.jpg",
+                "headingText": "This is ____",
+                "paragraph": "___ is one of the kids on our organization benefitting from your donations.",
+                "alt": "A photo of a smiling girl."
+            },
+            {
+                "imageUrl": "https://i.ibb.co/5k1v1gP/kid-2679111-1920.jpg",
+                "headingText": "Meet ____",
+                "paragraph": "____ is learning how to type on a computer at our school in ___.",
+                "alt": "A photo of a smiling girl."
+            }
+        ]
+    })
+
+    test('Current page content updates correctly.', async () => {
+        fetchMock.restore(); //reset the mock
+        fetchMock.getOnce('*', page.pageContent);
+        await page.getPageContents();
+        page.updateInformation();
+        expect(page.pageContent[page.arrayPosition]['paragraph']).toEqual(page.currentPageContent.paragraph);
+        expect(page.pageContent[page.arrayPosition]['headingText']).toEqual(page.currentPageContent.headingText);
+        expect(page.pageContent[page.arrayPosition]['imageUrl']).toEqual(page.currentPageContent.imageUrl);
+    })
+})
