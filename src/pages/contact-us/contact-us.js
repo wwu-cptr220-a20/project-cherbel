@@ -49,3 +49,5 @@ function getPhoto(){
     currentPageContent.alt = images[x].alt;
     renderPhoto();
 }
+
+//testing
