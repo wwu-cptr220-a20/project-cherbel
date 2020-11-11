@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MenuItems} from "./MenuItems";
+import { PageLinks} from "./PageLinks";
 
 class NavBar extends Component {
 
@@ -14,7 +14,7 @@ class NavBar extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        {MenuItems.map((item, index) => {
+                        {PageLinks.map((item, index) => {
                             return (
                                 <li key={index} className="nav-item">
                                     <Link className="nav-link" to={item.url}>
