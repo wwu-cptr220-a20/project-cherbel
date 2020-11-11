@@ -1,3 +1,36 @@
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-flex {
+    display: flex;
+}
+
+/*Donate Section*/
+#donate > img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.portal {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*Social Media*/
+#social {
+    margin-left: auto;
+    margin-right: auto;
+}
+#social img {
+    display: block;
+    height: auto;
+    width: 100px;
+}
+
+/*Kids Stories Section*/
 /* code inspired from https://codepen.io/gin85cc/pen/jrOgRq */
 .back, .next {
     display: inline-block;
@@ -45,7 +78,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    display: none;
     background-color: lightgrey;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -76,22 +108,6 @@
     height: 75px;
 }
 
-#kids-stories-active {
-    display: block;
-}
-
-#kids-stories-inactive {
-    display: none;
-}
-
-#story-active {
-    display: flex;
-}
-
-#story-inactive {
-    display: none;
-}
-
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 60px;
@@ -99,6 +115,10 @@
 }
 
 @media only screen and (min-width: 600px) {
+    .portal {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .story {
         width: 647px;
         height: 400px;
@@ -211,3 +231,4 @@
         padding-left: 60px;
     }
 }
+

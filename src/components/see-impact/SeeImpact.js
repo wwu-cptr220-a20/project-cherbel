@@ -19,6 +19,10 @@ class SeeImpact extends Component {
         }
     }
 
+    toggleIsPopupVisible = () => {
+        this.setState({isPopupVisible: !this.state.isPopupVisible})
+    }
+
     upDateInformation = () => {
             this.setState({imageUrl: SeeImpactContent[this.arrayPosition].imageUrl});
             this.setState({headingText: SeeImpactContent[this.arrayPosition].headingText});
@@ -46,7 +50,7 @@ class SeeImpact extends Component {
         return(
             <section>
                 <h2 id="see-impact">See the Impact</h2>
-                <div id="kids-stories" className="kids-stories-inactive">
+                <div id="kids-stories" className={this.state.isPopupVisible ? "display-block" : "display-none"}>
                     <h3>Stories From The Kids</h3>
                     <div id="image-flex" >
                         <button className="back arrow" onClick={this.onBackClick}></button>
@@ -55,14 +59,12 @@ class SeeImpact extends Component {
                     </div>
                     <h4 className="kids-head">{this.state.headingText}</h4>
                     <p className="kids-p">{this.state.paragraph}</p>
-                    <button id="more">Learn More</button>
+                    <button id="more" onClick={this.toggleIsPopupVisible}>Learn More</button>
                 </div>
-                <div className="story border story-active"  id="story1">
+                <div className={`story border ${this.state.isPopupVisible ? "display-none" : "display-flex"}`}>
                     <h2>{this.state.headingText}</h2>
-                    <p>
-                        {this.state.about}
-                    </p>
-                    <button className="closeButton">Close</button>
+                    <p>{this.state.about}</p>
+                    <button className="closeButton" onClick={this.toggleIsPopupVisible}>Close</button>
                 </div>
             </section>
         )
