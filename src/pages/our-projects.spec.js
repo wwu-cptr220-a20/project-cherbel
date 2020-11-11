@@ -71,4 +71,20 @@ describe('Includes Required HTML Elements', () => {
         expect(navLinks[2].children[0].data).toEqual("Our Projects");
         expect(navLinks[3].children[0].data).toEqual("About Us");
     })
+
+    it('should have 5 flex items in the footer', () => {
+        let categories = $('.footer .flex-item');
+        expect(categories.length).toEqual(5);
+        expect(categories[0].children[1].children[0].data).toEqual("Give");
+        expect(categories[1].children[1].children[0].data).toEqual("Learn More");
+        expect(categories[2].children[1].children[0].data).toEqual("Follow Us");
+        expect(categories[3].children[1].children[0].data).toEqual("Contact Us");
+    })
+})
+
+describe('Includes required CSS styling', () => {
+    it('should have proper padding around the graph container', () => {
+        console.log($('#graph-container').eq(1));
+        expect($('#graph-container').css('padding-left')).toEqual('10px');
+    })
 })

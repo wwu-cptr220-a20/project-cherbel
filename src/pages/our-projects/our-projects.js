@@ -1,6 +1,6 @@
 'use strict';
 
-class Graph {
+export class Graph {
     constructor() {
         // the WHO api requires a proxy, which is provided by heroku and tends to time-out on occasion, 
         // causing the data to not be returned.
