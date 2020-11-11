@@ -4,7 +4,7 @@ export const FooterItems = [
         items: [
             {
                 content: 'Donate | ',
-                url: '#',
+                url: '/donate',
             },
             {
                 content: 'Our Projects | ',
@@ -12,7 +12,7 @@ export const FooterItems = [
             },
             {
                 content: 'See Impact',
-                url: '#',
+                url: '/donate#see-impact',
             }
         ]
     },
