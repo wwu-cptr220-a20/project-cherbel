@@ -44,41 +44,54 @@ describe('Source code is valid', () => {
 })
 
 //HTML Validation
-let $; //cheerio instance
+//cheerio instance
 beforeAll(() => {
-    $ = cheerio.load(html);
+   let $ = cheerio.load(html);
 });
 
 describe('Includes Required HTML Elements', () => {
     test('HTML contains head, and body', () => {
         let bodyChildren = $('html').children();
         expect(bodyChildren.length).toEqual(2);
-        expect(bodyChildren[0].tagName).toMatch('head'); //html's first child is head
-        expect(bodyChildren[1].tagName).toMatch('body');  //html's second child is body
-    })
-
-    test('Body contains nav, and footer', () => {
-        let bodyChildren = $('body').children();
-        let lastItem = bodyChildren.length - 1;
-        expect(bodyChildren[0].tagName).toMatch('nav'); //body's first child is nav
-        expect(bodyChildren[lastItem].tagName).toMatch('footer');  //body's last child is footer
+        expect(bodyChildren[0].tagName).toMatch('HEAD'); //html's first child is head
+        expect(bodyChildren[1].tagName).toMatch('BODY');  //html's second child is body
     })
 })
 
-
+const $ = require('jquery');
 window.jQuery = window.$ = $;
-
-let page = require(jsPath);
+let page; // = require(jsPath);
 
 describe('javascript functions for contact-us',() => {
 
+    beforeAll(() => {
+        fetchMock.get('*', []); //starting mock for any initial loads
+        page = require(jsPath); //load the solution -- needs to be in here for some reason
+      })
+
+    //   fetchMock.restore(); //reset the mock
+    //   fetchMock.getOnce('*', );
+
     test ('gets an image', () => {
         page.getPhoto();
-        expect(page.currentPageContent.img ).toEqual(page.images[x].img);
-        expect(page.currentPageContent.alt).toEqual(page.images[x].alt);
+        try {
+            expect(page.currentPageContent.img ).toEqual(page.images[0].img);
+            expect(page.currentPageContent.alt).toEqual(page.images[0].alt);
+          }
+          catch{
+            try {
+                expect(page.currentPageContent.img ).toEqual(page.images[1].img);
+                expect(page.currentPageContent.alt).toEqual(page.images[1].alt);
+            }
+            catch{
+                expect(page.currentPageContent.img ).toEqual(page.images[2].img);
+                expect(page.currentPageContent.alt).toEqual(page.images[2].alt);
+            }
+          }
     })
 
     test ('gets new advice',  () => {
-        expect(page.currentPageContent.advice).notToBe(null);
+        page.getNewAdvice();
+        expect(page.currentPageContent.advice).not.toBe(null);
     })
 });

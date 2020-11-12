@@ -51,3 +51,7 @@ function getPhoto(){
 }
 
 //testing
+module.exports.images = images;
+module.exports.currentPageContent = currentPageContent;
+module.exports.getPhoto = getPhoto;
+module.exports.getNewAdvice = getNewAdvice;
