@@ -49,3 +49,9 @@ function getPhoto(){
     currentPageContent.alt = images[x].alt;
     renderPhoto();
 }
+
+//testing
+module.exports.images = images;
+module.exports.currentPageContent = currentPageContent;
+module.exports.getPhoto = getPhoto;
+module.exports.getNewAdvice = getNewAdvice;
