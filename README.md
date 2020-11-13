@@ -1,6 +1,14 @@
-# Course Project
+# FGAC
 
-This repository contains practice exercises for the _Web Application Development_ at WWU.
-It has been adapted from _Client-Side Web Development_ course at the UW iSchool.
+This project is for CPTR220 at Walla Walla University
 
-The site can be viewed at <https://wwu-cptr220-a20.github.io/project-yourusername/>
+##Getting Started
+Step 1: Clone the repository
+
+Step 2: Navigate into the directory and run `npm install`
+
+##Testing
+To Run Tests, run the command `jest` in the home directory
+
+
+
