@@ -1,6 +1,7 @@
 const fs = require('fs');
 const cheerio = require('cheerio') //for html testing
 const fetchMock = require('fetch-mock');
+const inlineCss = require('inline-css'); //for css testing
 
 //include custom matchers
 const styleMatchers = require('jest-style-matchers');
@@ -8,10 +9,17 @@ expect.extend(styleMatchers);
 
 const htmlPath = __dirname + '/our-projects/our-projects.html';
 const html = fs.readFileSync(htmlPath, 'utf-8'); //load the HTML file once
+const cssPath = __dirname + '/our-projects/our-projects.css';
+const css = fs.readFileSync(cssPath, 'utf-8'); //load the HTML file once
 const jsPath = __dirname + '/our-projects/our-projects.js';
 
+//absolute path for relative loading (if needed)
+const baseDir = 'file://'+__dirname+'/';
+
 describe('Source code is valid', () => {
-    test('Donate page validates without errors', async () => {
+    console.log(css);
+
+    test('Our-projects page validates without errors', async () => {
         const lintOpts = {
             'attr-bans':['align', 'background', 'bgcolor', 'border', 'frameborder', 'marginwidth', 'marginheight', 'scrolling', 'style', 'width', 'height'], //adding height, allow longdesc
             'tag-bans':['style','b'], //<i> allowed for font-awesome
@@ -32,7 +40,7 @@ describe('Source code is valid', () => {
         }
     })
     //Javascript Validation
-    test('Donate folder lints without errors', () => {
+    test('Our-Projects folder lints without errors', () => {
         if(fs.existsSync(__dirname+'/donate')) {
             const jsfiles = fs.readdirSync(__dirname+'/donate').filter((f) => f.endsWith('.js'));
             for(let f of jsfiles) {
@@ -43,12 +51,16 @@ describe('Source code is valid', () => {
 })
 
 //HTML Validation
-let $; //cheerio instance
-beforeAll(() => {
-    $ = cheerio.load(html);
-});
-
 describe('Includes Required HTML Elements', () => {
+    let $; //cheerio instance
+
+    beforeAll(async () => {
+      //test CSS by inlining properties and then reading them from cheerio
+      let inlined = await inlineCss(html, {extraCss: css, url:baseDir, removeLinkTags:true});
+      $ = cheerio.load(inlined);
+      // console.log(inlined);
+    })
+      
     it('should contain a head and body', () => {
         let bodyChildren = $('html').children();
         expect(bodyChildren.length).toEqual(2);
@@ -83,8 +95,27 @@ describe('Includes Required HTML Elements', () => {
 })
 
 describe('Includes required CSS styling', () => {
-    it('should have proper padding around the graph container', () => {
-        console.log($('#graph-container').eq(1));
-        expect($('#graph-container').css('padding-left')).toEqual('10px');
+
+    let $; //cheerio instance
+
+    beforeAll(async () => {
+      //test CSS by inlining properties and then reading them from cheerio
+      let inlined = await inlineCss(html, {extraCss: css, url:baseDir, removeLinkTags:false});
+      $ = cheerio.load(inlined);
+      // console.log(inlined);
+    })
+      
+    test('should have proper padding around the graph container', () => {
+        let graphContainer = $('main').eq(1).children('div').eq(1).children('div').eq(2);
+        console.log(graphContainer);
+        expect(graphContainer.css('padding-left')).toEqual('10px');
     })
 })
+
+// //load JavaScript libraries separately
+// window.jQuery = window.$ = $; //make available to solution
+// let page;/// = require(jsPath); //load the solution
+
+// describe('Javascript Functions Properly', () => {
+    
+// });
