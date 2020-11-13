@@ -18,6 +18,10 @@
     width: 100px;
 }
 
+#social > td > a {
+    border: 0px;
+}
+
 /*Kids Stories Section*/
 /* code inspired from https://codepen.io/gin85cc/pen/jrOgRq */
 .back, .next {

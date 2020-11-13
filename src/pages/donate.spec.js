@@ -25,11 +25,7 @@ describe('Source code is valid', () => {
             'id-class-style':false, //I like dashes in classnames
             'img-req-alt':true
         }
-
-        const htmlfiles = fs.readdirSync(__dirname).filter((f) => f.endsWith('.pages'));
-        for(let f of htmlfiles) {
-            await expect(f).toHaveNoHtmlLintErrorsAsync(lintOpts);
-        }
+        await expect(__dirname + '/donate/donate.html').toHaveNoHtmlLintErrorsAsync(lintOpts);
     })
     //Javascript Validation
     test('Donate folder lints without errors', () => {
@@ -60,7 +56,7 @@ describe('Includes Required HTML Elements', () => {
         let bodyChildren = $('body').children();
         let lastItem = bodyChildren.length - 1;
         expect(bodyChildren[0].tagName).toMatch('nav'); //body's first child is nav
-        expect(bodyChildren[lastItem].tagName).toMatch('footer');  //body's last child is footer
+        expect(bodyChildren[lastItem].tagName).toMatch('script');  //body's last child is script
     })
 })
 
