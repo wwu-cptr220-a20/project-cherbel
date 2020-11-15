@@ -70,7 +70,7 @@ class Graph {
             }
         });
     }
-    
+
     fetchData() {
         let promise = fetch(this.url)
             .then(response => {
@@ -80,8 +80,8 @@ class Graph {
                 this.parseData(data);
             })
             .catch(error => {
-                console.log(error);
-                console.log("sending fake data");
+                // console.log(error);
+                // console.log("sending fake data");
                 this.renderData(this.fakeData);
             });
         return promise;
@@ -120,3 +120,10 @@ class Graph {
 
 let graph = new Graph();
 graph.fetchData();
+
+// For Testing
+if(typeof module !== 'undefined' && module.exports){
+    /* eslint-disable */
+    if(typeof Graph !== 'undefined') 
+      module.exports.Graph = Graph;
+  }

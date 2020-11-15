@@ -40,8 +40,10 @@
     "chart.js": "^2.9.4",
     "cheerio": "^1.0.0-rc.3",
     "fetch-mock": "^9.10.7",
+    "inline-css": "^3.0.0",
     "jquery": "^3.5.1",
     "node-fetch": "^2.6.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "npm": "^6.14.8"
   }
 }
