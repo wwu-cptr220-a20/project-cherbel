@@ -12,6 +12,8 @@ const html = fs.readFileSync(htmlPath, 'utf-8'); //load the HTML file once
 const cssPath = __dirname + '/our-projects.css';
 const css = fs.readFileSync(cssPath, 'utf-8'); //load the HTML file once
 const jsPath = __dirname + '/our-projects.js';
+const chartPath = __dirname + '/chart.js/dist/Chart.js';
+let $ = require('jquery');
 
 //absolute path for relative loading (if needed)
 const baseDir = 'file://'+__dirname+'/';
@@ -91,9 +93,9 @@ describe('Includes Required HTML Elements', () => {
     })
 })
 
-describe('Includes required CSS styling', () => {
+// CSS Validation
 
-    let $; //cheerio instance
+describe('Includes required CSS styling', () => {
 
     beforeAll(async () => {
       //test CSS by inlining properties and then reading them from cheerio
@@ -102,17 +104,48 @@ describe('Includes required CSS styling', () => {
       // console.log(inlined);
     })
       
-    test('should have proper padding around the graph container', () => {
-        let graphContainer = $('main').eq(1).children('div').eq(1).children('div').eq(2);
-        // console.log(graphContainer);
-        // expect(graphContainer.css('padding-left')).toEqual('10px');
+    it('should have proper padding around the graph container', () => {
+        let graphContainer = $("#graph-container");
+        expect(graphContainer.css('padding-left')).toEqual('10px');
+        expect(graphContainer.css('padding-right')).toEqual('10px');
+    })
+
+    it('should have proper padding around the project info', () => {
+        let projectInfo = $("#project-info");
+        expect(projectInfo.css('padding-left')).toEqual('20px');
+        expect(projectInfo.css('padding-right')).toEqual('20px');
     })
 })
 
-// //load JavaScript libraries separately
-// window.jQuery = window.$ = $; //make available to solution
-// let page;/// = require(jsPath); //load the solution
+// JS Validation
 
-// describe('Javascript Functions Properly', () => {
-    
-// });
+// window.jQuery = window.$ = $; //make available to solution
+let graph;
+describe ('Graph functions as expected', () => {
+    beforeAll(() => {
+        fetchMock.get('*', []);
+        fetch = jest.fn(() => Promise.resolve());
+        let Chart = require(chartPath);
+        $ = require('jquery'); //jQuery for convenience
+        window.jQuery = window.$ = $; //make available to solution
+        let solution = require(jsPath); //load the solution
+        graph = new solution.Graph();
+        graph.fetchData();
+    })
+
+    it('uses the proper url in the graph', () => {
+        expect(graph.url).toEqual('https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:ZWE;SEX:*');
+    })
+
+    it('uses blue bars', () => {
+        expect(graph.chart.data.datasets[0].backgroundColor[0]).toEqual('rgba(54, 162, 235, 0.2)');
+    })
+
+    it('uses blue bar borders', () => {
+        expect(graph.chart.data.datasets[0].borderColor[0]).toEqual('rgba(54, 162, 235, 1)');
+    })
+
+    it('has the first year as 1987', () => {
+        expect(graph.chart.data.labels[0]).toEqual('1987');
+    })
+})

@@ -1,6 +1,6 @@
 'use strict';
 
-export class Graph {
+class Graph {
     constructor() {
         // the WHO api requires a proxy, which is provided by heroku and tends to time-out on occasion, 
         // causing the data to not be returned.
@@ -70,7 +70,7 @@ export class Graph {
             }
         });
     }
-    
+
     fetchData() {
         let promise = fetch(this.url)
             .then(response => {
@@ -80,8 +80,8 @@ export class Graph {
                 this.parseData(data);
             })
             .catch(error => {
-                console.log(error);
-                console.log("sending fake data");
+                // console.log(error);
+                // console.log("sending fake data");
                 this.renderData(this.fakeData);
             });
         return promise;
@@ -120,3 +120,10 @@ export class Graph {
 
 let graph = new Graph();
 graph.fetchData();
+
+// For Testing
+if(typeof module !== 'undefined' && module.exports){
+    /* eslint-disable */
+    if(typeof Graph !== 'undefined') 
+      module.exports.Graph = Graph;
+  }
