@@ -1,0 +1,14 @@
+section {
+    padding-bottom: 40px;
+}
+
+/*Social Media*/
+#social {
+    margin-left: auto;
+    margin-right: auto;
+}
+#social img {
+    display: block;
+    height: auto;
+    width: 100px;
+}
