@@ -7,7 +7,7 @@ class Donate extends Component {
 
     render() {
         return(
-            <main className="text-center">
+            <main>
                 <h1>Donate</h1>
                 <section>
                     <p className="portal">Eventually this will hopefully have a portal to make a credit card donation.
