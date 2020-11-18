@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import '../../css/custom-default.css';
-import '../../css/fancy-buttons.css'
 import './AboutUs.css';
 
 class AboutUs extends Component {
 
     render() {
         return(
-            <main className="text-center">
+            <div id="main">
                 <h1>About Us</h1>
                 <section>
                     <h2>Our Mission</h2>
@@ -41,7 +39,7 @@ class AboutUs extends Component {
                     <h2 id="finance">Financials</h2>
                     <p>This Section will include links to Financial Statements and an IRS 990 Form.</p>
                 </section>
-            </main>
+            </div>
         )
     }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/custom-default.css';
 import './SocialMedia.css';
 
 class SocialMedia extends Component {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SeeImpact from "../../see-impact/SeeImpact";
 import SocialMedia from "../../social-media/SocialMedia";
-import '../../css/custom-default.css';
 import './Donate.css';
 
 class Donate extends Component {

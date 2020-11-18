@@ -1,17 +1,14 @@
 img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 p {
     padding-left: 30px;
     padding-right: 30px;
 }
-
 .contact-info {
     padding-left: 30px;
     padding-right: 30px;
 }
-
 .donate-div {
     padding: 40px;
 }
@@ -21,7 +18,6 @@ p {
     padding-top: 50px;
     padding-bottom: 50px;
 }
-
 .flex-box {
     display: flex;
     flex-direction: row;
@@ -29,7 +25,6 @@ p {
     justify-content: center;
     align-items: baseline;
 }
-
 .flex-item {
     margin: 20px;
 }
@@ -75,7 +70,6 @@ p {
         padding-top: 0px;
         padding-bottom: 50px;
     }
-
 }
 
 @media only screen and (min-width: 600px) {
@@ -83,11 +77,9 @@ p {
         padding-left: 30px;
         padding-right: 30px;
     }
-
     .donate-div {
         padding: 40px;
     }
-
     #content-section {
         padding-top: 0px;
         padding-bottom: 50px;
@@ -102,7 +94,6 @@ p {
     .donate-div {
         padding: 40px;
     }
-
     #content-section {
         padding-top: 0px;
         padding-bottom: 50px;
