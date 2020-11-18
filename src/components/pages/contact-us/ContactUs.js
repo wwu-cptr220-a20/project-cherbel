@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SocialMedia from "../../social-media/SocialMedia";
 import '../../css/custom-default.css';
 import './ContactUs.css';
+import Advice from './Advice';
+import Photo from './Photo';
 
 class ContactUs extends Component {
 
@@ -30,13 +32,11 @@ class ContactUs extends Component {
             <section id="content-section">
                 <div class="flex-box">
                     <div class="flex-item advice-card">
-                        <div class="align-horizontally">
-                            <div id="need-Advice">Need some Advice?</div>
-                            <div id="random-advice"></div>
-                            <div id="advice-source">Advice Generated from AdviceSlip.com</div>
-                        </div>
+                        <Advice />
                     </div>
-                    <div class="flex-item photo-card"></div>
+                    <div class="flex-item photo-card">
+                        <Photo />
+                    </div>
                     <div class="flex-item social-media">
                         <SocialMedia />
                     </div>
