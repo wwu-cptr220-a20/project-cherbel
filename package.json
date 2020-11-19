@@ -2,6 +2,7 @@
   "name": "fgac",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wwu-cptr220-a20.github.io/project-yourusername/",
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.12.5",
     "@testing-library/jest-dom": "^5.11.5",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
