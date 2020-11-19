@@ -1,0 +1,49 @@
+{
+  "name": "cptr220-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest-style-matchers": "^0.1.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "shared-node-browser": true,
+      "jquery": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": "off",
+      "semi": [
+        "off",
+        "always",
+        {
+          "omitLastInOneLineBlock": true
+        }
+      ],
+      "camelcase": [
+        "error"
+      ]
+    }
+  },
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "cheerio": "^1.0.0-rc.3",
+    "fetch-mock": "^9.10.7",
+    "inline-css": "^3.0.0",
+    "jquery": "^3.5.1",
+    "node-fetch": "^2.6.1",
+    "normalize.css": "^8.0.1",
+    "npm": "^6.14.8"
+  }
+}
