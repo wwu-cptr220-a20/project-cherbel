@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Graph from './Graph.js';
 import './OurProjects.css';
+import {Link} from "react-router-dom";
 
 class OurProjects extends Component {
 
@@ -22,11 +23,11 @@ class OurProjects extends Component {
                     <div className="impact-div">
                         <p>Eventually this won't be the same button as donate:</p>
                         {/* Button help from: https://dev.to/webdeasy/top-20-css-buttons-animations-f41 */}
-                        <Button text="See the Impact" link='../donate/donate.html#see-impact'/>
+                        <Link to="/donate#see-impact"><Button text="See the Impact" link='../donate/donate.html#see-impact'/></Link>
                     </div>
                     <div className="donate-div">
                         {/* Button help from: https://dev.to/webdeasy/top-20-css-buttons-animations-f41 */}
-                        <Button text="Donate Now" link='../donate/donate.html'/>
+                        <Link to="/donate"><Button text="Donate Now" link='../donate/donate.html'/></Link>
                     </div>
                 </div>
             </main>

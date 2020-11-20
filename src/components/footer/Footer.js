@@ -4,6 +4,11 @@ import './Footer.css';
 import {Link} from "react-router-dom";
 
 class Footer extends Component {
+
+    GenerateContent = (subItem,  index) => {
+        return <Link key={index} to={subItem.url}>{subItem.content}</Link>
+    }
+
     render() {
         return(
             <footer className="footer">
@@ -14,9 +19,7 @@ class Footer extends Component {
                             <div key={index} className="flex-item text-center">
                                 <h2>{item.title}</h2>
                                 {item.items.map((subItem, index) => {
-                                    return(
-                                        <Link key={index} to={subItem.url}>{subItem.content}</Link>
-                                    )
+                                    return this.GenerateContent(subItem, index)
                                 })}
                             </div>
                         )

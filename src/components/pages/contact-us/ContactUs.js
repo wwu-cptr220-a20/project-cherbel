@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SocialMedia from "../../social-media/SocialMedia";
 import './ContactUs.css';
+import {Link} from "react-router-dom";
 
 class ContactUs extends Component {
 
@@ -23,7 +24,7 @@ class ContactUs extends Component {
                         <div>Address: 123 Fyneman Way, College Place, Wa, 99324</div>
                     </div>
                     <div className="donate-div">
-                        <button className="donate-btn" type="button">Donate Now</button>
+                        <Link to="/donate"><button className="donate-btn" type="button">Donate Now</button></Link>
                     </div>
                 </section>
                 <section id="content-section">
