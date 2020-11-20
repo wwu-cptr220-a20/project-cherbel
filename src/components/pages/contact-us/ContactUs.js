@@ -17,7 +17,7 @@ class ContactUs extends Component {
                         are wondering where your where your donations are going, or anything else, you can also
                         contact us us via email and we'll get back to you as soon as possible.
                     </p>
-                    <div class="contact-info">
+                    <div className="contact-info">
                         <div>Phone:<a href="tel:1-123-456-7890"> 1 (123) 456-7890</a></div>
                         <div>Email:<a href="mailto:example@example.com"> example@example.com</a></div>
                         <div>Address: 123 Fyneman Way, College Place, Wa, 99324</div>
@@ -29,7 +29,7 @@ class ContactUs extends Component {
                 <section id="content-section">
                     <div className="flex-box">
                         <div className="flex-item advice-card">
-                            <div class="align-horizontally">
+                            <div className="align-horizontally">
                                 <div id="need-Advice">Need some Advice?</div>
                                 <div id="random-advice"></div>
                                 <div id="advice-source">Advice Generated from AdviceSlip.com</div>

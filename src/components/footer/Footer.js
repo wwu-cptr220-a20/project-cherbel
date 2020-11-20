@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {FooterItems, ContactInfo} from "./FooterItems";
 import './Footer.css';
+import {Link} from "react-router-dom";
 
 class Footer extends Component {
     render() {
@@ -14,7 +15,7 @@ class Footer extends Component {
                                 <h2>{item.title}</h2>
                                 {item.items.map((subItem, index) => {
                                     return(
-                                        <a href={subItem.url} key={index}>{subItem.content}</a>
+                                        <Link key={index} to={subItem.url}>{subItem.content}</Link>
                                     )
                                 })}
                             </div>
