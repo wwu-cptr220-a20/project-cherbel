@@ -23,11 +23,11 @@ class OurProjects extends Component {
                     <div className="impact-div">
                         <p>Eventually this won't be the same button as donate:</p>
                         {/* Button help from: https://dev.to/webdeasy/top-20-css-buttons-animations-f41 */}
-                        <Link to="/donate#see-impact"><Button text="See the Impact" link='../donate/donate.html#see-impact'/></Link>
+                        <Link to="/donate"><Button text="See the Impact"/></Link>
                     </div>
                     <div className="donate-div">
                         {/* Button help from: https://dev.to/webdeasy/top-20-css-buttons-animations-f41 */}
-                        <Link to="/donate"><Button text="Donate Now" link='../donate/donate.html'/></Link>
+                        <Link to="/donate"><Button text="Donate Now"/></Link>
                     </div>
                 </div>
             </main>
