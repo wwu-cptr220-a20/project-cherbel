@@ -8,11 +8,11 @@ export const FooterItems = [
             },
             {
                 content: 'Our Projects | ',
-                url: '#',
+                url: '/ourProjects',
             },
             {
                 content: 'See Impact',
-                url: '/donate#see-impact',
+                url: '/donate',
             }
         ]
     },
@@ -21,15 +21,15 @@ export const FooterItems = [
         items: [
             {
                 content: 'Our Mission | ',
-                url: '#',
+                url: '/aboutUs',
             },
             {
                 content: 'LeaderShip | ',
-                url: '#',
+                url: '/aboutUs',
             },
             {
                 content: 'Financials',
-                url: '#',
+                url: '/aboutUs',
             }
         ]
     },
@@ -38,15 +38,18 @@ export const FooterItems = [
         items: [
             {
                 content: 'Instagram | ',
-                url: '#',
+                url: 'https://www.instagram.com',
+                type: 'true'
             },
             {
                 content: 'Facebook | ',
-                url: '#',
+                url: 'https://www.facebook.com',
+                type: 'true'
             },
             {
                 content: 'Twitter',
-                url: '#',
+                url: 'https://twitter.com',
+                type: 'true'
             }
         ]
     },

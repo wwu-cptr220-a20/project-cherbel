@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/custom-default.css';
 import './ContactUs.css';
 
 
@@ -7,8 +6,8 @@ class Advice extends Component {
     constructor(props) {
       super(props);
       this.state = { 
-        advice:
-      };
+        advice: ""
+      }
     }
   
     componentDidMount() {
@@ -16,12 +15,12 @@ class Advice extends Component {
         .then(res => res.json())
         .then(
           (result) => {
-            this.setState({advice: json.slip.advice});
+            this.setState({advice: result.slip.advice});
           },
           (error) => {
             this.setState({
               isLoaded: true,
-              error = "We're Sorry, we were unable to load advice at this time."
+              advice: "We're Sorry, we were unable to load advice at this time."
             });
           }
         )
@@ -30,7 +29,9 @@ class Advice extends Component {
     render() {
         return (
             <div class="align-horizontally">
-                            <div id="need-Advice">Need some Advice?</div>
+                            <div id="need-Advice">
+                              Need some Advice?
+                            </div>
                             <div id="random-advice">
                                 <p> {this.state.advice} </p>
                             </div>

@@ -1,9 +1,10 @@
 import React from 'react';
+import './Error.css'
 
 const Error = () => {
     return (
         <div>
-            <p>Error: Page does not exist!</p>
+            <p id="error">Error: Page does not exist!</p>
         </div>
     );
 }

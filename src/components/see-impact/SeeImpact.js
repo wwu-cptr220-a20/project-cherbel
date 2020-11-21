@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {SeeImpactContent} from "./SeeImpactContent";
-import '../css/custom-default.css';
 import './SeeImpact.css';
 
 class SeeImpact extends Component {

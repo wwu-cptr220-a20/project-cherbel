@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import SeeImpact from "../../see-impact/SeeImpact";
 import SocialMedia from "../../social-media/SocialMedia";
-import '../../css/custom-default.css';
 import './Donate.css';
 
 class Donate extends Component {
 
     render() {
         return(
-            <main className="text-center">
+            <main>
                 <h1>Donate</h1>
                 <section>
                     <p className="portal">Eventually this will hopefully have a portal to make a credit card donation.

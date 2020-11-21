@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import '../../css/custom-default.css';
-import '../../css/fancy-buttons.css'
 import './AboutUs.css';
+import {Link} from "react-router-dom";
 
 class AboutUs extends Component {
 
     render() {
         return(
-            <main className="text-center">
+            <div id="main">
                 <h1>About Us</h1>
                 <section>
                     <h2>Our Mission</h2>
@@ -18,7 +17,7 @@ class AboutUs extends Component {
                     </p>
                 </section>
                 <section className="btn">
-                    <button className="donate-btn" type="button">Donate Now</button>
+                    <Link to="/donate"><button className="donate-btn" type="button">Donate Now</button></Link>
                 </section>
                 <section>
                     <h2>History</h2>
@@ -41,7 +40,7 @@ class AboutUs extends Component {
                     <h2 id="finance">Financials</h2>
                     <p>This Section will include links to Financial Statements and an IRS 990 Form.</p>
                 </section>
-            </main>
+            </div>
         )
     }
 }
