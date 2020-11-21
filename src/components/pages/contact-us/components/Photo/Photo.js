@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './ContactUs.css';
 
 class Photo extends Component {
     constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import SocialMedia from "../../social-media/SocialMedia";
+import Advice from './components/Advice/Advice';
+import Photo from './components/Photo/Photo';
 import './ContactUs.css';
-import Advice from './Advice';
-import Photo from './Photo';
 
 class ContactUs extends Component {
 

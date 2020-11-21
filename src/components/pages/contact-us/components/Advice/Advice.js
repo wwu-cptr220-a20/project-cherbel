@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './ContactUs.css';
-
 
 class Advice extends Component {
     constructor(props) {

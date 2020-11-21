@@ -54,14 +54,17 @@ p {
 
 /*Photo Card*/
 img.photo {
+    display: block;
     position: relative;
     right: 103px;
     bottom: 8px;
     border: solid darkblue;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    object-fit: cover;
     width: 300px;
     height: 300px;
+
 }
 .photo-card {
     padding-left: 100px;
