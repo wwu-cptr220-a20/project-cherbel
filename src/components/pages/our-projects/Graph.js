@@ -105,12 +105,9 @@ class Graph extends Component {
     }
 
     componentDidMount() {
-        console.log("Mounted");
         this.fetchData(this.state.set1url, 1);
         this.fetchData(this.state.set2url, 2);
         // this.renderData(this.fakeData, 0);
-        console.log("Chart reference");
-        console.log(this.chartReference);
     }
 
     fetchData(url, setNumber) {
@@ -123,8 +120,6 @@ class Graph extends Component {
                 this.parseData(data, newSetNumber);
             })
             .catch(error => {
-                // console.log(error);
-                // console.log("sending fake data");
                 // this.renderData(this.fakeData);
             });
         return promise;
@@ -134,8 +129,6 @@ class Graph extends Component {
     // to an object containing only the values we need.
     parseData(data, setNumber) {
         let facts = data.fact;
-        console.log("API data");
-        console.log(data);
         let condensedFacts = {
             country: '',
             data: []
@@ -159,8 +152,6 @@ class Graph extends Component {
             }
         });
         condensedFacts.country = country;
-        console.log("Condensed Facts: ");
-        console.log(condensedFacts);
         this.renderData(condensedFacts, setNumber);
     }
 
@@ -188,11 +179,6 @@ class Graph extends Component {
     }
 
     mapData(set1, set2) {
-        console.log("set1 in mapData");
-        console.log(set1);
-        console.log("set2 in mapData");
-        console.log(set2);
-        console.log("MAPPING DATA+++++++++++++++++")
         let newData = {
             labels: [],
             datasets: [
@@ -219,12 +205,8 @@ class Graph extends Component {
             newData.labels.push(item.year);
         })
         newData.labels.sort();
-        console.log("Years----------");
-        console.log(newData.labels);
-        var index = 0;
         var set1Index = 0;
         var set2Index = 0;
-        console.log("HUH");
         newData.labels.forEach(year => {
             // set1
             if (set1Index < set1.data.length) {
@@ -232,7 +214,6 @@ class Graph extends Component {
                     // value belongs in year slot
                     newData.datasets[0].data.push(set1.data[set1Index].value);
                     set1Index++;
-                    console.log("set1 matched");
                 } else {
                     newData.datasets[0].data.push(0);
                 }
@@ -243,21 +224,14 @@ class Graph extends Component {
                     // value belongs in year slot
                     newData.datasets[1].data.push(set2.data[set2Index].value);
                     set2Index++;
-                    console.log("set2 matched");
                 } else {
                     newData.datasets[1].data.push(0);
                 }
             }
-            index++;
-            console.log(year);
-            console.log(index);
         });
 
         newData.datasets[0].label = set1.country;
         newData.datasets[1].label = set2.country;
-
-        console.log("NEW DATA//////////////////////////");
-        console.log(newData);
 
         return newData;
     }
@@ -280,14 +254,11 @@ class Graph extends Component {
     changeSet = (country) => {
         this.url2 = 'https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:' + this.countries[country] + ';SEX:*';
         this.fetchData(this.url2, 2);
-        console.log("In change function");
     }
 
     render() {
-        console.log("rendering");
         return (
           <div id="bar-graph">
-            {console.log("refresh at render: " + this.state.refresh)}
             <Bar
                 data={this.state.data}
                 options={{
@@ -306,8 +277,6 @@ class Graph extends Component {
             <DropDown title="Comparable Countries" countries={Object.keys(this.countries)} changeCallback={this.changeSet}/>
             {/* <button onClick={this.clickHandler}>Raise 1987</button>
             <h2>1987 Value: {this.state.data().datasets[0].data[0]}</h2> */}
-            {console.log("State: ")}
-            {console.log(this.state)}
           </div>
         );
     }
