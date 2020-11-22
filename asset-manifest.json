@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/project-cherbel/static/css/main.5262cb2a.chunk.css",
-    "main.js": "/project-cherbel/static/js/main.7aff2066.chunk.js",
-    "main.js.map": "/project-cherbel/static/js/main.7aff2066.chunk.js.map",
+    "main.css": "/project-cherbel/static/css/main.72cfd0b9.chunk.css",
+    "main.js": "/project-cherbel/static/js/main.ac2ceb39.chunk.js",
+    "main.js.map": "/project-cherbel/static/js/main.ac2ceb39.chunk.js.map",
     "runtime-main.js": "/project-cherbel/static/js/runtime-main.51662709.js",
     "runtime-main.js.map": "/project-cherbel/static/js/runtime-main.51662709.js.map",
-    "static/js/2.bf9533b4.chunk.js": "/project-cherbel/static/js/2.bf9533b4.chunk.js",
-    "static/js/2.bf9533b4.chunk.js.map": "/project-cherbel/static/js/2.bf9533b4.chunk.js.map",
+    "static/js/2.2521d26a.chunk.js": "/project-cherbel/static/js/2.2521d26a.chunk.js",
+    "static/js/2.2521d26a.chunk.js.map": "/project-cherbel/static/js/2.2521d26a.chunk.js.map",
     "index.html": "/project-cherbel/index.html",
-    "static/css/main.5262cb2a.chunk.css.map": "/project-cherbel/static/css/main.5262cb2a.chunk.css.map",
-    "static/js/2.bf9533b4.chunk.js.LICENSE.txt": "/project-cherbel/static/js/2.bf9533b4.chunk.js.LICENSE.txt"
+    "static/css/main.72cfd0b9.chunk.css.map": "/project-cherbel/static/css/main.72cfd0b9.chunk.css.map",
+    "static/js/2.2521d26a.chunk.js.LICENSE.txt": "/project-cherbel/static/js/2.2521d26a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.51662709.js",
-    "static/js/2.bf9533b4.chunk.js",
-    "static/css/main.5262cb2a.chunk.css",
-    "static/js/main.7aff2066.chunk.js"
+    "static/js/2.2521d26a.chunk.js",
+    "static/css/main.72cfd0b9.chunk.css",
+    "static/js/main.ac2ceb39.chunk.js"
   ]
 }
