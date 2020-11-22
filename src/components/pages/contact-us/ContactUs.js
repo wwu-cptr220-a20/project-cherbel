@@ -3,6 +3,7 @@ import SocialMedia from "../../social-media/SocialMedia";
 import Advice from './components/Advice/Advice';
 import Photo from './components/Photo/Photo';
 import './ContactUs.css';
+import {Link} from "react-router-dom";
 
 class ContactUs extends Component {
 
@@ -30,11 +31,9 @@ class ContactUs extends Component {
                             Address: 123 Fyneman Way, College Place, Wa, 99324
                         </div>
                     </div>
-                    <div className="donate-div">
-                        <button className="donate-btn" type="button" onclick="window.location.href='../donate/donate.html';">
-                            Donate Now
-                        </button>
-                    </div>
+                    <section className="donate-div btn">
+                        <Link to="/donate"><button className="donate-btn" type="button">Donate Now</button></Link>
+                    </section>
                 </section>
                 <section id="content-section">
                     <div className="flex-box">

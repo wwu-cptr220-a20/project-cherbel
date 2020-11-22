@@ -12,3 +12,29 @@ section {
     height: auto;
     width: 100px;
 }
+
+.link {
+    color: dodgerblue;
+    cursor: auto;
+}
+
+.link:hover {
+    color: lightskyblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:visited {
+    color: lightskyblue;
+    cursor: auto;
+}
+
+.link:active {
+    color: darkblue;
+
+}
+
+.link:visited:active {
+    color: lightskyblue;
+
+}

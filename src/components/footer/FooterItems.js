@@ -12,7 +12,7 @@ export const FooterItems = [
             },
             {
                 content: 'See Impact',
-                url: '/donate',
+                url: '/donate/see-impact',
             }
         ]
     },
@@ -32,27 +32,7 @@ export const FooterItems = [
                 url: '/aboutUs',
             }
         ]
-    },
-    {
-        title: 'Follow Us',
-        items: [
-            {
-                content: 'Instagram | ',
-                url: 'https://www.instagram.com',
-                type: 'true'
-            },
-            {
-                content: 'Facebook | ',
-                url: 'https://www.facebook.com',
-                type: 'true'
-            },
-            {
-                content: 'Twitter',
-                url: 'https://twitter.com',
-                type: 'true'
-            }
-        ]
-    },
+    }
 ]
 
 export const ContactInfo = {

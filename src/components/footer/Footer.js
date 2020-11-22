@@ -6,7 +6,19 @@ import {Link} from "react-router-dom";
 class Footer extends Component {
 
     GenerateContent = (subItem,  index) => {
-        return <Link key={index} to={subItem.url}>{subItem.content}</Link>
+        return <Link key={index} to={subItem.url} ><span className="link">{subItem.content}</span></Link>
+    }
+
+    visitTwitter = () => {
+        window.location = "https://twitter.com";
+    }
+
+    visitFacebook = () => {
+        window.location = "https://www.facebook.com";
+    }
+
+    visitInstagram = () => {
+        window.location = "https://www.instagram.com";
     }
 
     render() {
@@ -25,10 +37,16 @@ class Footer extends Component {
                         )
                     })}
                     <div className="flex-item text-center">
+                        <h2>Social Media</h2>
+                        <span onClick={this.visitFacebook} className="link">Facebook | </span>
+                        <span onClick={this.visitTwitter} className="link">Twitter | </span>
+                        <span onClick={this.visitInstagram} className="link">Instagram</span>
+                    </div>
+                    <div className="flex-item text-center">
                         <h2>Contact Us</h2>
-                        <a href={`tel:` + ContactInfo.phone}>{ContactInfo.phone}</a>
+                        <a href={`tel:` + ContactInfo.phone} className="link">{ContactInfo.phone}</a>
                         <span> | </span>
-                        <a href={`mailto:` + ContactInfo.email}>{ContactInfo.email}</a>
+                        <a href={`mailto:` + ContactInfo.email} className="link">{ContactInfo.email}</a>
                     </div>
                     <div className="flex-item text-center non-profit">
                         <i className="text-light py-4 mb-4">&copy;FGAC is a Non-Profit Organization</i>
