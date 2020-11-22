@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AboutUs.css';
+import {Link} from "react-router-dom";
 
 class AboutUs extends Component {
 
@@ -16,7 +17,7 @@ class AboutUs extends Component {
                     </p>
                 </section>
                 <section className="btn">
-                    <button className="donate-btn" type="button">Donate Now</button>
+                    <Link to="/donate"><button className="donate-btn" type="button">Donate Now</button></Link>
                 </section>
                 <section>
                     <h2>History</h2>

@@ -7,12 +7,12 @@ import AboutUs from "./components/pages/about-us/AboutUs";
 import ContactUs from "./components/pages/contact-us/ContactUs";
 import Donate from "./components/pages/donate/Donate";
 import OurProjects from "./components/pages/our-projects/OurProjects";
-import Error from "./components/pages/Error/Error";
+import Error from "./components/pages/error/Error";
 import './App.css';
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div>
               <NavBar />
               <Switch>
