@@ -8,19 +8,18 @@ class Graph extends Component {
         super(props);
         this.chartReference = React.createRef();
         this.countries = {
-            zimbabwe: "ZWE",
-            zambia: "ZMB",
-            india: "IND",
-            china: "CHN",
-            iraq: "IRQ",
-            malawi: "MWI",
-            vietnam: "VNM",
-            usa: "USA"
+            Zambia: "ZMB",
+            India: "IND",
+            China: "CHN",
+            Iraq: "IRQ",
+            Malawi: "MWI",
+            Vietnam: "VNM",
+            United_States: "USA"
         }
         // the WHO api requires a proxy, which is provided by heroku and tends to time-out on occasion, 
         // causing the data to not be returned.
-        this.url1 = 'https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:' + this.countries.zimbabwe + ';SEX:*';
-        this.url2 = 'https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:' + this.countries.malawi + ';SEX:*';
+        this.url1 = 'https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:ZWE;SEX:*';
+        this.url2 = 'https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:' + this.countries.China + ';SEX:*';
         // this object is used in case the external data breaks
         this.fakeData = {
             country: "Zimbabwe",
@@ -278,6 +277,12 @@ class Graph extends Component {
         // this.chartReference.update();
     }
 
+    changeSet = (country) => {
+        this.url2 = 'https://cors-anywhere.herokuapp.com/https://apps.who.int/gho/athena/data/GHO/NUTRITION_WA_2.json?&filter=COUNTRY:' + this.countries[country] + ';SEX:*';
+        this.fetchData(this.url2, 2);
+        console.log("In change function");
+    }
+
     render() {
         console.log("rendering");
         return (
@@ -298,13 +303,69 @@ class Graph extends Component {
                 }}
                 refresh={this.state.refresh}
             />
-            <button onClick={this.clickHandler}>Raise 1987</button>
-            <h2>1987 Value: {this.state.data().datasets[0].data[0]}</h2>
+            <DropDown title="Comparable Countries" countries={Object.keys(this.countries)} changeCallback={this.changeSet}/>
+            {/* <button onClick={this.clickHandler}>Raise 1987</button>
+            <h2>1987 Value: {this.state.data().datasets[0].data[0]}</h2> */}
             {console.log("State: ")}
             {console.log(this.state)}
           </div>
         );
     }
 }
+
+class DropDown extends Component {
+    constructor(props) {
+      super(props);
+      
+      this.state = {
+        showMenu: false,
+      }
+      
+      this.showMenu = this.showMenu.bind(this);
+
+      var index = 0;
+      this.buttons = this.props.countries.map(country => {
+        index++;  
+        return <button 
+                    key={index} 
+                    className="menu-button" 
+                    onClick={() => {
+                        this.props.changeCallback(country)
+                    }}>
+                {country}</button>;
+      });
+    }
+    
+    showMenu(event) {
+      event.preventDefault();
+      
+      this.setState(currentState => {
+        return { showMenu: !currentState.showMenu };
+      });
+    }
+  
+    render() {
+      return (
+        <div>
+          <button onClick={this.showMenu} className="menu-button">
+            {this.props.title}
+          </button>
+          
+          {
+            this.state.showMenu
+              ? (
+                <div className="menu">
+                  {this.buttons}
+                </div>
+              )
+              : (
+                null
+              )
+          }
+        </div>
+      );
+    }
+}
+  
 
 export default Graph;
