@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import {DONATE_SECTIONS} from "./components/pages/donate/DonateSections";
 import NavBar from "./components/nav-bar/NavBar";
 import Footer from "./components/footer/Footer";
 import Homepage from "./components/pages/homepage/Homepage";
@@ -17,11 +16,7 @@ class App extends Component {
 
     constructor(props){
         super(props);
-        this.state = {section: 'see-impact'};
-    }
-
-    componentDidMount() {
-        this.setState({section: DONATE_SECTIONS[0]})
+        this.state = {section: ''};
     }
 
     render() {

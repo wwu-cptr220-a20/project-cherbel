@@ -2,8 +2,6 @@ import React, { Component, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import SeeImpact from "../../see-impact/SeeImpact";
 import SocialMedia from "../../social-media/SocialMedia";
-// import {DONATE_SECTIONS} from "./DonateSections";
-// import _ from 'lodash';
 import './Donate.css';
 
 class Donate extends Component {
@@ -19,20 +17,19 @@ class Donate extends Component {
         if (section  === "see-impact") {
             this.setState({scroll: true})
         }
-        this.setState({section: "see-impact"});
     }
 
     returnScroll = () => {
-        // this.setState({scroll: false});
+        this.setState({scroll: false});
         return (
             <ScrollToSeeImpact />
         )
     }
 
+
     render() {
         return(
             <main>
-
                 <h1>Donate</h1>
                 <section>
                     <p className="portal">Eventually this will hopefully have a portal to make a credit card donation.
